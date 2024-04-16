@@ -82,12 +82,24 @@ def verify_translation(translated_message):
 
 # Mensajes codificados para decodificar
 mensaje_1 = "10001011101011000010111010001110000011011000000111100111101001011000011010011100110100010111010111111101000011110011111100111101000110001100000010110101111011111110111010110110111001110110111100111111100101001010010100000101101011000101100110100011100100101100001100100011010110101011111111111011011101110010000100101011000111111100010001110110011001011010001101111101011010001101110000000111001001010100011111100001100101101011100110011110100011000110000001011010111110011100"
+mensaje_2 = "0110101011011100101000111101011100110111010110110100001000111010100101111010011111110111001010001111010111001101110101100001100010011010001110010010001100010110011001110010010000111101111010"
 
-# Decoding and translating the encoded message
-decoded_message, translated_message = decode_and_translate_huffman(mensaje_1, reverse_codebook, jeroglifico_a_espanol)
+# Decodificación y traducción del mensaje 1
+decoded_message_1, translated_message_1 = decode_and_translate_huffman(mensaje_1, reverse_codebook, jeroglifico_a_espanol)
 
-if verify_translation(translated_message):
-    print("Decoded Message:", decoded_message)
-    print("Translated Message:", translated_message)
+# Verificación del mensaje 1
+if verify_translation(translated_message_1):
+    print("Decoded Message 1:", decoded_message_1)
+    print("Translated Message 1:", translated_message_1)
 else:
-    print("La traducción no tiene sentido.")
+    print("La traducción del mensaje 1 no tiene sentido.")
+
+# Decodificación y traducción del mensaje 2
+decoded_message_2, translated_message_2 = decode_and_translate_huffman(mensaje_2, reverse_codebook, jeroglifico_a_espanol)
+
+# Verificación del mensaje 2
+if verify_translation(translated_message_2):
+    print("Decoded Message 2:", decoded_message_2)
+    print("Translated Message 2:", translated_message_2)
+else:
+    print("La traducción del mensaje 2 no tiene sentido.")
